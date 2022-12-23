@@ -32,7 +32,7 @@ To run this project in your development machine, follow these steps:
 
 1. Create a .env file
 
-2. Set the variables :DB_HOST, DB_NAME, DB_USER, DB_PASS
+2. Set the variables :DB_HOST, DB_NAME, DB_USER, DB_PASS  and uncomment DATABASES (using postgresql) and comment DATABASES using  (Sqlite3)
 
 3. Add the address: `0.0.0.0` on ALLOWED_HOSTS (settings.py)
 
