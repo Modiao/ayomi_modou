@@ -9,14 +9,14 @@ class LoginView(View):
         return render(request, 'authentication/login.html')
     
     def post(self, request):
-        print(request.POST)
         username = request.POST.get('username')
         password = request.POST.get('password')
 
         if username and password:
             user = auth.authenticate(username=username, password=password)
+            print(user)
             if user:
-                return redirect('acceuil')
+                return render(request, 'users/acceuil.html', context={'email': user.email})
             messages.error(request, 'Invalid credentials, try again')
             return render(request, 'authentication/login.html')
         messages.error(request, 'username and password must not be empty')
