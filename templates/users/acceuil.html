@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Welcome: {{user.username}}</h1>
+<br/>
+<br/>
+
+<button  class='btn btn-dark'><a href="{% url 'update-user' %}">Modifier ses informations</a></button>
+
+
+{% endblock %}
