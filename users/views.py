@@ -25,7 +25,7 @@ class UpdateUserView(View):
             user = User.objects.get(username=request.user)
             user.email = email
             user.save()
-            return render(request, 'users/acceuil.html', context={'email': user.email})
+            return render(request, 'users/acceuil.html', context={'email': user.email, 'user': user.username})
         except Exception as e:
             messages.error(request,'Error: %s, please try again' % str(e))
             return render(request, 'users/update_user.html')
